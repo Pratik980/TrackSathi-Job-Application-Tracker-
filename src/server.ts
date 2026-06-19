@@ -49,6 +49,8 @@ async function handleApiRoute(pathname: string, request: Request): Promise<Respo
 
   if (!pathname.startsWith("/applications")) return null;
 
+  if (request.headers.get("accept")?.includes("text/html")) return null;
+
   const url = new URL(request.url);
   const segments = pathname.replace("/applications", "").replace(/^\/|\/$/g, "").split("/").filter(Boolean);
   const id = segments[0] ?? null;
