@@ -10,7 +10,7 @@ import {
 import { type ReactNode, useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import logo from "../assets/logo_tracksathi.png";
+const LOGO_URL = "/logo_tracksathi.png";
 import { AppShell } from "@/components/app-shell";
 import { ThemeProvider } from "@/lib/theme";
 import { Toaster } from "@/components/ui/sonner";
@@ -97,7 +97,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head><HeadContent /></head>
       <body>
         <div id="splash" style={splashStyle}>
-          <img src={logo} alt="TrackSathi" style={{ width: 180, height: "auto" }} />
+          <img src={LOGO_URL} alt="TrackSathi" style={{ width: 220, height: "auto" }} />
           <div style={{
             width: 28, height: 28,
             border: "3px solid oklch(0.74 0.13 78 / 0.3)",
@@ -119,11 +119,22 @@ function RootComponent() {
 
   useEffect(() => {
     const el = document.getElementById("splash");
-    if (el) {
-      el.style.opacity = "0";
-      el.style.pointerEvents = "none";
-      setTimeout(() => el.remove(), 600);
-    }
+    const start = Date.now();
+    const minDisplay = 3500;
+
+    const hide = () => {
+      const elapsed = Date.now() - start;
+      const delay = Math.max(0, minDisplay - elapsed);
+      setTimeout(() => {
+        if (el) {
+          el.style.opacity = "0";
+          el.style.pointerEvents = "none";
+          setTimeout(() => el?.remove(), 600);
+        }
+      }, delay);
+    };
+
+    hide();
   }, []);
 
   return (
