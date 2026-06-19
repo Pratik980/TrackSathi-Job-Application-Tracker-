@@ -287,6 +287,3 @@ supabase/
 |:---:|:---:|:---:|
 | ![Filter & Search](public/screenshots/filter-search.png) | ![Dark Theme](public/screenshots/dark-theme.png) | ![Mobile](public/screenshots/mobile-view.png) |
 
-## License
-
-MIT
