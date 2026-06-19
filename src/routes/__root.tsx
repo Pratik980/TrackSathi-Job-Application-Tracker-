@@ -86,7 +86,6 @@ const splashStyle: Record<string, string> = {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  gap: "1.5rem",
   background: "#fff",
   transition: "opacity 0.6s ease",
 };
@@ -97,21 +96,13 @@ function RootShell({ children }: { children: ReactNode }) {
       <head><HeadContent /></head>
       <body>
         <div id="splash" style={splashStyle}>
-          <div
-            style={{
-              width: 240,
-              height: 115,
-              borderRadius: 12,
-              animation: "glow 1.6s ease-in-out infinite",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img src={LOGO_URL} alt="TrackSathi" style={{ width: 220, height: "auto" }} />
-          </div>
+          <img
+            src={LOGO_URL}
+            alt="TrackSathi"
+            style={{ width: 220, height: "auto", animation: "glow 1.6s ease-in-out infinite" }}
+          />
         </div>
-        <style>{`@keyframes glow { 0%, 100% { box-shadow: 0 0 15px 5px oklch(0.32 0.055 155 / 0.1), 0 0 40px 15px oklch(0.32 0.055 155 / 0.05); } 50% { box-shadow: 0 0 25px 10px oklch(0.32 0.055 155 / 0.35), 0 0 60px 30px oklch(0.32 0.055 155 / 0.2); } }`}</style>
+        <style>{`@keyframes glow { 0%, 100% { filter: drop-shadow(0 0 10px oklch(0.32 0.055 155 / 0.2)) drop-shadow(0 0 30px oklch(0.32 0.055 155 / 0.1)); } 50% { filter: drop-shadow(0 0 20px oklch(0.32 0.055 155 / 0.6)) drop-shadow(0 0 50px oklch(0.32 0.055 155 / 0.35)); } }`}</style>
         {children}
         <Scripts />
       </body>
