@@ -100,10 +100,10 @@ function RootShell({ children }: { children: ReactNode }) {
           <img
             src={LOGO_URL}
             alt="TrackSathi"
-            style={{ width: 220, height: "auto", animation: "glow 2s ease-in-out infinite alternate" }}
+            style={{ width: 220, height: "auto", animation: "glow 1.5s ease-in-out infinite" }}
           />
         </div>
-        <style>{`@keyframes glow { from { filter: drop-shadow(0 0 15px oklch(0.32 0.055 155 / 0.25)); } to { filter: drop-shadow(0 0 40px oklch(0.32 0.055 155 / 0.6)); } }`}</style>
+        <style>{`@keyframes glow { 0%, 100% { filter: drop-shadow(0 0 8px oklch(0.32 0.055 155 / 0.15)); } 50% { filter: drop-shadow(0 0 35px oklch(0.32 0.055 155 / 0.55)); } }`}</style>
         {children}
         <Scripts />
       </body>
