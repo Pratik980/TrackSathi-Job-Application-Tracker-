@@ -275,7 +275,17 @@ supabase/
 
 ## Screenshots
 
-> Add screenshots or a demo video link here.
+| Dashboard | Applications List |
+|:---:|:---:|
+| ![Dashboard](public/screenshots/dashboard.png) | ![Applications List](public/screenshots/applications-list.png) |
+
+| Application Detail | Application Form |
+|:---:|:---:|
+| ![Detail](public/screenshots/application-detail.png) | ![Form](public/screenshots/application-form.png) |
+
+| Filter & Search | Dark Theme | Mobile View |
+|:---:|:---:|:---:|
+| ![Filter & Search](public/screenshots/filter-search.png) | ![Dark Theme](public/screenshots/dark-theme.png) | ![Mobile](public/screenshots/mobile-view.png) |
 
 ## License
 
