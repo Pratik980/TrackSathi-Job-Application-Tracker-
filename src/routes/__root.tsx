@@ -97,13 +97,21 @@ function RootShell({ children }: { children: ReactNode }) {
       <head><HeadContent /></head>
       <body>
         <div id="splash" style={splashStyle}>
-          <img
-            src={LOGO_URL}
-            alt="TrackSathi"
-            style={{ width: 220, height: "auto", animation: "glow 1.5s ease-in-out infinite" }}
-          />
+          <div
+            style={{
+              width: 240,
+              height: 115,
+              borderRadius: 12,
+              animation: "glow 1.6s ease-in-out infinite",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img src={LOGO_URL} alt="TrackSathi" style={{ width: 220, height: "auto" }} />
+          </div>
         </div>
-        <style>{`@keyframes glow { 0%, 100% { filter: drop-shadow(0 0 8px oklch(0.32 0.055 155 / 0.15)); } 50% { filter: drop-shadow(0 0 35px oklch(0.32 0.055 155 / 0.55)); } }`}</style>
+        <style>{`@keyframes glow { 0%, 100% { box-shadow: 0 0 15px 5px oklch(0.32 0.055 155 / 0.1), 0 0 40px 15px oklch(0.32 0.055 155 / 0.05); } 50% { box-shadow: 0 0 25px 10px oklch(0.32 0.055 155 / 0.35), 0 0 60px 30px oklch(0.32 0.055 155 / 0.2); } }`}</style>
         {children}
         <Scripts />
       </body>
