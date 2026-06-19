@@ -7,9 +7,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 
 import appCss from "../styles.css?url";
+import logo from "../assets/logo_tracksathi.png";
 import { AppShell } from "@/components/app-shell";
 import { ThemeProvider } from "@/lib/theme";
 import { Toaster } from "@/components/ui/sonner";
@@ -77,11 +78,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const splashStyle: Record<string, string> = {
+  position: "fixed",
+  inset: "0",
+  zIndex: "9999",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "1.5rem",
+  background: "oklch(0.16 0.015 155)",
+  transition: "opacity 0.6s ease",
+};
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head><HeadContent /></head>
       <body>
+        <div id="splash" style={splashStyle}>
+          <img src={logo} alt="TrackSathi" style={{ width: 180, height: "auto" }} />
+          <div style={{
+            width: 28, height: 28,
+            border: "3px solid oklch(0.74 0.13 78 / 0.3)",
+            borderTopColor: "oklch(0.74 0.13 78)",
+            borderRadius: "50%",
+            animation: "spin 0.8s linear infinite",
+          }} />
+        </div>
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         {children}
         <Scripts />
       </body>
@@ -91,6 +116,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    const el = document.getElementById("splash");
+    if (el) {
+      el.style.opacity = "0";
+      el.style.pointerEvents = "none";
+      setTimeout(() => el.remove(), 600);
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
