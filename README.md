@@ -275,15 +275,15 @@ supabase/
 
 ## Screenshots
 
-| Dashboard | Applications List |
+| Loading Image | Dashboard |
 |:---:|:---:|
-| ![Dashboard](public/screenshots/dashboard.png) | ![Applications List](public/screenshots/applications-list.png) |
+| ![Loading Image](public/screenshots/loading-image.png) | ![Dashboard](public/screenshots/dashboard.png) |
 
-| Application Detail | Application Form |
+| Applications | New Application |
 |:---:|:---:|
-| ![Detail](public/screenshots/application-detail.png) | ![Form](public/screenshots/application-form.png) |
+| ![Applications](public/screenshots/applications.png) | ![New Application](public/screenshots/new-application.png) |
 
-| Filter & Search | Dark Theme | Mobile View |
+| Edit Application | View Application | Dark View |
 |:---:|:---:|:---:|
-| ![Filter & Search](public/screenshots/filter-search.png) | ![Dark Theme](public/screenshots/dark-theme.png) | ![Mobile](public/screenshots/mobile-view.png) |
+| ![Edit Application](public/screenshots/edit-application.png) | ![View Application](public/screenshots/view-application.png) | ![Dark View](public/screenshots/dark-view.png) |
 
