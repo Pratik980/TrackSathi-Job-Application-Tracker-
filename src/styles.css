@@ -1,0 +1,211 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-beige: var(--beige);
+  --color-charcoal: var(--charcoal);
+  --color-forest: var(--forest);
+
+  --shadow-luxe: 0 30px 80px -30px oklch(0.18 0.04 150 / 0.35);
+  --shadow-card: 0 20px 50px -25px oklch(0.18 0.04 150 / 0.25);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Luxury palette */
+  --background: oklch(0.985 0.005 90);        /* off white */
+  --foreground: oklch(0.22 0.015 250);        /* dark charcoal */
+  --charcoal: oklch(0.22 0.015 250);
+
+  --forest: oklch(0.32 0.055 155);            /* deep forest green */
+  --gold: oklch(0.74 0.13 78);                /* warm gold */
+  --gold-foreground: oklch(0.22 0.015 250);
+  --beige: oklch(0.92 0.025 80);              /* luxury beige */
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.985 0.005 90);
+  --secondary: var(--gold);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.95 0.015 85);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: var(--beige);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.985 0.005 90);
+  --border: oklch(0.88 0.01 90);
+  --input: oklch(0.88 0.01 90);
+  --ring: var(--gold);
+}
+
+.dark {
+  --background: oklch(0.16 0.015 155);
+  --foreground: oklch(0.96 0.01 90);
+  --charcoal: oklch(0.96 0.01 90);
+  --forest: oklch(0.42 0.065 155);
+  --gold: oklch(0.78 0.14 78);
+  --beige: oklch(0.32 0.02 80);
+  --card: oklch(0.21 0.02 155);
+  --card-foreground: oklch(0.96 0.01 90);
+  --popover: oklch(0.21 0.02 155);
+  --popover-foreground: oklch(0.96 0.01 90);
+  --primary: var(--gold);
+  --primary-foreground: oklch(0.16 0.015 155);
+  --secondary: oklch(0.28 0.04 155);
+  --secondary-foreground: oklch(0.96 0.01 90);
+  --muted: oklch(0.24 0.02 155);
+  --muted-foreground: oklch(0.72 0.02 90);
+  --accent: oklch(0.28 0.04 155);
+  --accent-foreground: oklch(0.96 0.01 90);
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  ::selection { background: var(--color-gold); color: var(--color-foreground); }
+}
+
+@utility container-luxe {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 80rem;
+  @media (min-width: 768px) { padding-inline: 2rem; }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+@utility eyebrow-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: oklch(0.85 0.08 78);
+  font-weight: 500;
+}
+
+@utility gold-rule {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+@utility glass-panel {
+  background: color-mix(in oklab, var(--color-background) 65%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--color-gold) 25%, transparent);
+}
+@utility glass-dark {
+  background: oklch(0.16 0.015 155 / 0.45);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 0.12);
+}
+
+@utility hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-luxe);
+  }
+}
+
+@utility image-zoom {
+  overflow: hidden;
+  & img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover img { transform: scale(1.06); }
+}
+
+@utility reveal {
+  animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@utility reveal-slow {
+  animation: reveal-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ken-burns {
+  0% { transform: scale(1.08) translate(0,0); }
+  100% { transform: scale(1.18) translate(-1%, 1%); }
+}
+@utility ken-burns {
+  animation: ken-burns 16s ease-in-out infinite alternate;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
