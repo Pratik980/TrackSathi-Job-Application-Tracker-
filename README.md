@@ -279,9 +279,9 @@ supabase/
 |:---:|:---:|
 | ![Loading Image](public/screenshots/loading-image.png) | ![Dashboard](public/screenshots/dashboard.png) |
 
-| Applications | New Application |
-|:---:|:---:|
-| ![Applications](public/screenshots/applications.png) | ![New Application](public/screenshots/new-application.png) |
+| Applications | Search & Filter | New Application |
+|:---:|:---:|:---:|
+| ![Applications](public/screenshots/applications.png) | ![Search & Filter](public/screenshots/search-filter.png) | ![New Application](public/screenshots/new-application.png) |
 
 | Edit Application | View Application | Dark View |
 |:---:|:---:|:---:|
