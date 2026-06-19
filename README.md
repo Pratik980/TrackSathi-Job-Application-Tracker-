@@ -1,4 +1,4 @@
-# TrackSathi — Job Application Tracker
+# TrackSathi - Job Application Tracker
 
 A full-stack job application tracking application built with **TanStack Start**, **React 19**, **Supabase**, and **Tailwind CSS v4**. Track applications from Applied to Offer with a clean, responsive dashboard.
 
