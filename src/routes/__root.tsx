@@ -87,7 +87,7 @@ const splashStyle: Record<string, string> = {
   alignItems: "center",
   justifyContent: "center",
   gap: "1.5rem",
-  background: "oklch(0.16 0.015 155)",
+  background: "#fff",
   transition: "opacity 0.6s ease",
 };
 
@@ -103,7 +103,7 @@ function RootShell({ children }: { children: ReactNode }) {
             style={{ width: 220, height: "auto", animation: "glow 2s ease-in-out infinite alternate" }}
           />
         </div>
-        <style>{`@keyframes glow { from { filter: drop-shadow(0 0 20px oklch(0.74 0.13 78 / 0.3)); } to { filter: drop-shadow(0 0 45px oklch(0.74 0.13 78 / 0.7)); } }`}</style>
+        <style>{`@keyframes glow { from { filter: drop-shadow(0 0 15px oklch(0.32 0.055 155 / 0.25)); } to { filter: drop-shadow(0 0 40px oklch(0.32 0.055 155 / 0.6)); } }`}</style>
         {children}
         <Scripts />
       </body>
